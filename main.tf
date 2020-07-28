@@ -18,7 +18,7 @@ terraform {
 resource "aws_security_group" "test_instance" {
   name        = "${var.project}-${var.env_name}-sg"
   description = "Security Group for the ${var.project}-${var.env_name}"
-  vpc_id      =
+  vpc_id      = aws_vpc.test_vpc.id
 
   tags = {
     Name       = "${var.project}-${var.env_name} Security Group"
